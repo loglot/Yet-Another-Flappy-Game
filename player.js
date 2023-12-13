@@ -12,6 +12,10 @@ export class Player {
         this.velY = this.velY *.99
         this.velY += .5
         console.log(this.x)
+        if (this.y <= 100 && this.velY <0) {
+            this.velY = 0
+            this.y = 100
+        }
     }
 
     Input(){
