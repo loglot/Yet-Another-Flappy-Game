@@ -1,9 +1,6 @@
 const canvas = document.getElementById("game_screen");
 const ctx = canvas.getContext("2d");
-const originalWidth = canvas.width;
-const originalHeight = canvas.height;
-var scaleX = 0;
-var scaleY = 0;
+
 
 var x = 50
 var y = 50
@@ -18,7 +15,6 @@ while(true){
     velY = velY *.99
     velY += .5
     draw()
-    resizeCanvasForWindowSize()
     await sleep(1000/60)
 }
 
@@ -59,37 +55,4 @@ function Input() {
             velY += 20
         }
       }, false);
-}
-
-function resizeCanvasForWindowSize() {
-
-    var currentWidth = canvas.width;
-    var currentHeight = canvas.height;
-  
-    var windowWidth = window.innerWidth;
-    var windowHeight = window.innerHeight;
-  
-    var desiredWidth = windowWidth;
-    var aspectRatio = originalWidth / originalHeight;
-    var desiredHeight = desiredWidth / aspectRatio;
-    canvas.width = desiredWidth;
-    canvas.height = desiredHeight;
-    scaleX = (desiredWidth / originalWidth);
-    scaleY = (desiredHeight / originalHeight);
-    ctx.setTransform(scaleY, 0, 0, scaleX, 0, 0)
-    
-    currentWidth = canvas.width;
-    currentHeight = canvas.height;
-    
-    if (currentHeight >= windowHeight) {
-      desiredHeight = windowHeight;
-      aspectRatio = originalWidth / originalHeight;
-      desiredWidth = desiredHeight * aspectRatio;
-      canvas.width = desiredWidth;
-      canvas.height = desiredHeight;
-      scaleX = (desiredWidth / originalWidth);
-      scaleY = (desiredHeight / originalHeight);
-      ctx.setTransform(scaleY, 0, 0, scaleX, 0, 0)
-    
-    }
 }
