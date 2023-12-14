@@ -3,15 +3,25 @@ const ctx = canvas.getContext("2d");
 
 export class draw {
     
-    Game(player) {
+    Game(player, block, menu, s, hs) {
+
+
         //clear screen
         this.bg()
-        if (false){
-        //if (misc.MainMenu) {
+
+        if (menu) {
           this.DrawStroked("Yet Another Flappy Game", 250, 200)
+          this.DrawStroked("Press W To Start", 260, 350)
+          this.DrawStroked(s, 270, 500)
+          this.DrawStroked(hs, 770, 500)
         } else {
             this.Circ(player.r, "#afbfaf", player.x, player.y, true)
-            this.DrawStroked(`0`, 50, 100)
+
+
+            this.Rect(block[0].x,block[0].y ,block[0].width , block[0].height)
+            this.Rect(block[1].x,block[1].y ,block[1].width , block[1].height)
+            this.Rect(block[2].x,block[2].y ,block[2].width , block[2].height)
+            this.DrawStroked(s, 50, 100)
         }
     }
 
