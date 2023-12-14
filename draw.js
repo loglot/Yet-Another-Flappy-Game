@@ -21,6 +21,8 @@ export class draw {
             this.Rect(block[0].x,block[0].y ,block[0].width , block[0].height)
             this.Rect(block[1].x,block[1].y ,block[1].width , block[1].height)
             this.Rect(block[2].x,block[2].y ,block[2].width , block[2].height)
+            this.Rect(block[3].x,block[3].y ,block[3].width , block[3].height)
+            this.Rect(block[4].x,block[4].y ,block[4].width , block[4].height)
             this.DrawStroked(s, 50, 100)
         }
     }

@@ -53,18 +53,22 @@ blockInit() {
     this.block[0] = new Block()
     this.block[1] = new Block()
     this.block[2] = new Block()
+    this.block[3] = new Block()
+    this.block[4] = new Block()
 }
 
 BlockUpdate() {
     this.block[0].update()
     this.block[1].update()
     this.block[2].update()
+    this.block[3].update()
+    this.block[4].update()
 }
 
 MiscChecks(){
     if (this.player.y > 1000) {this.Die()}
 
-    for(let i = 0; i <= 2; i++) {
+    for(let i = 0; i <= 4; i++) {
 
         console.log(this.player.x, ">=", this.block[i].x - this.block[i].width/2)
         console.log(this.player.x, "<=", this.block[i].x + this.block[i].width/2 )
